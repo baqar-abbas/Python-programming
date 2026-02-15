@@ -149,3 +149,29 @@ def main():
 # Start the program
 if __name__ == "__main__":
     main()
+
+# Output:
+
+# python library_manager.py
+
+# ==================================================
+#         📚 PERSONAL LIBRARY MANAGER
+# ==================================================
+# 1. 📖 Add a book
+# 2. 📋 List all books
+# 3. 🔍 Search books
+# 4. ✅ Mark book as read
+# 5. 🗑️ Delete a book
+# 6. 🚪 Exit
+# ==================================================
+# Choose an option (1-6): 3
+
+# 🔍 Search Books
+# ------------------------------
+# Enter title or author to search: Let US C
+
+# Found 1 book(s):
+# 1. Let US C by Robert Lafore (1993) - ✅ Read
+
+# Press Enter to continue...
+
