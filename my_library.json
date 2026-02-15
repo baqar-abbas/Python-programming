@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Let US C",
+        "author": "Robert Lafore",
+        "year": "1993",
+        "read": true
+    },
+    {
+        "title": "C++ Programming",
+        "author": "Robert Lafore",
+        "year": "2000",
+        "read": true
+    }
+]
