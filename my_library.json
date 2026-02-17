@@ -10,5 +10,11 @@
         "author": "Robert Lafore",
         "year": "2000",
         "read": true
+    },
+    {
+        "title": "JavaScript Programming",
+        "author": "Brenden Eich",
+        "year": "1997",
+        "read": false
     }
 ]
