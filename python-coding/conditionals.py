@@ -165,3 +165,28 @@ match point:
         print(f"On diagonal at {x},{y}")
     case (x, y):
         print(f"Point at {x},{y}")
+
+# 15. Best Practices
+# python
+#  Avoid deep nesting
+# if condition1:
+#     if condition2:
+#         if condition3:
+#             do_something()
+
+#  Better - use early returns or combine conditions
+# if not condition1:
+#     return
+# if not condition2:
+#     return
+# if condition3:
+#     do_something()
+
+#  Or combine with 'and'
+# if condition1 and condition2 and condition3:
+#     do_something()
+
+#  Use descriptive variable names for conditions
+# is_eligible = age >= 18 and has_license and not is_suspended
+# if is_eligible:
+#     rent_car()
