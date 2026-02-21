@@ -197,3 +197,198 @@ def outer():
 
 outer()
 
+# 5. Lambda Functions (Anonymous Functions)
+
+# Lambda functions are small, anonymous functions defined with the lambda keyword.
+
+# Basic lambda function
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+
+square = lambda x: x ** 2
+print(square(4))  # Output: 16
+
+# lambda in builtin functions
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # Output: [2, 4]
+
+# Sort with lambda key
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+people.sort(key=lambda person: person[1])  # Sort by age
+print(people)  # Output: [('Bob', 25), ('Alice', 30), ('Charlie', 35)] 
+
+# 6. Docstrings (Documentation)
+
+def calculate_bmi(weight, height):
+    """
+    Calculate Body Mass Index (BMI)
+    
+    Args:
+        weight (float): Weight in kilograms
+        height (float): Height in meters
+    
+    Returns:
+        float: BMI value
+    
+    Example:
+        >>> calculate_bmi(70, 1.75)
+        22.86
+    """
+    return weight / (height ** 2)
+
+# Access docstring
+print(calculate_bmi.__doc__)
+help(calculate_bmi)
+print(calculate_bmi(70, 1.75))  # Output: 22.857142857142858
+
+# Higher-Order Functions 
+
+# Functions that take other functions as arguments or return functions.
+
+def apply_operation(x, y, operation):
+    return operation(x, y)
+
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+
+print(apply_operation(5, 3, add))       # Output: 8
+print(apply_operation(5, 3, multiply))  # Output: 15
+
+# Functions that return functions
+
+def make_multiplier(factor):
+    def multiplier(x):
+        return x * factor
+    return multiplier
+
+double = make_multiplier(2)
+triple = make_multiplier(3)
+
+print(double(5))  # Output: 10
+print(triple(5))  # Output: 15
+
+# Python Decorators
+
+# Decorators let you add extra behavior to a function, without changing the function's code.
+
+# A decorator is a function that takes another function as input and returns a new function.
+
+"""
+Basic Decorator
+Define the decorator first, then apply it with @decorator_name above the function.
+ExampleGet your own Python Server
+A basic decorator that uppercases the return value of the decorated function.
+"""
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+print(myfunction())
+
+"""
+By placing @changecase directly above the function definition, the function myfunction is being "decorated" with the changecase function.
+
+The function changecase is the decorator.
+
+The function myfunction is the function that gets decorated.
+
+Multiple Decorator Calls
+A decorator can be called multiple times. Just place the decorator above the function you want to decorate.
+Example
+Using the @changecase decorator on two functions:
+"""
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+@changecase
+def otherfunction():
+  return "I am speed!"
+
+print(myfunction())
+print(otherfunction())
+
+"""
+Arguments in the Decorated Function
+Functions that requires arguments can also be decorated, just make sure you pass the arguments to the wrapper function:
+Example
+Functions with arguments can also be decorated:
+"""
+
+def changecase(func):
+  def myinner(x):
+    return func(x).upper()
+  return myinner
+
+@changecase
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))
+
+"""
+*args and **kwargs
+Sometimes the decorator function has no control over the 
+arguments passed from decorated function, to solve this problem,
+ add (*args, **kwargs) to the wrapper function, this way the 
+ wrapper function can accept any number, and any type of 
+ arguments, and pass them to the decorated function.
+
+ Example
+Secure the function with *args and **kwargs arguments:
+"""
+
+def changecase(func):
+  def myinner(*args, **kwargs):
+    return func(*args, **kwargs).upper()
+  return myinner
+
+@changecase
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))
+
+# 9. Recursive Functions
+
+# Factorial using recursion
+
+def factorial(n):
+   if n <= 1: # Base case: factorial of 0 or 1 is 1
+         return 1
+   else:
+         return n * factorial(n - 1) # Recursive case: n! = n * (n-1)!
+   
+print(factorial(5))  # Output: 120
+
+# Fibonacci using recursion
+
+def fibonacci(n):
+    if n <= 1:
+        return n  # Base case: fib(0) = 0, fib(1) = 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)  # Recursive case: fib(n) = fib(n-1) + fib(n-2)
+    
+print(fibonacci(7))  # Output: 13
+
+
+
