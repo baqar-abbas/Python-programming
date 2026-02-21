@@ -368,5 +368,27 @@ def myfunction(nam):
 
 print(myfunction("John"))
 
+# 9. Recursive Functions
+
+# Factorial using recursion
+
+def factorial(n):
+   if n <= 1: # Base case: factorial of 0 or 1 is 1
+         return 1
+   else:
+         return n * factorial(n - 1) # Recursive case: n! = n * (n-1)!
+   
+print(factorial(5))  # Output: 120
+
+# Fibonacci using recursion
+
+def fibonacci(n):
+    if n <= 1:
+        return n  # Base case: fib(0) = 0, fib(1) = 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)  # Recursive case: fib(n) = fib(n-1) + fib(n-2)
+    
+print(fibonacci(7))  # Output: 13
+
 
 
