@@ -273,3 +273,100 @@ triple = make_multiplier(3)
 
 print(double(5))  # Output: 10
 print(triple(5))  # Output: 15
+
+# Python Decorators
+
+# Decorators let you add extra behavior to a function, without changing the function's code.
+
+# A decorator is a function that takes another function as input and returns a new function.
+
+"""
+Basic Decorator
+Define the decorator first, then apply it with @decorator_name above the function.
+ExampleGet your own Python Server
+A basic decorator that uppercases the return value of the decorated function.
+"""
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+print(myfunction())
+
+"""
+By placing @changecase directly above the function definition, the function myfunction is being "decorated" with the changecase function.
+
+The function changecase is the decorator.
+
+The function myfunction is the function that gets decorated.
+
+Multiple Decorator Calls
+A decorator can be called multiple times. Just place the decorator above the function you want to decorate.
+Example
+Using the @changecase decorator on two functions:
+"""
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+@changecase
+def otherfunction():
+  return "I am speed!"
+
+print(myfunction())
+print(otherfunction())
+
+"""
+Arguments in the Decorated Function
+Functions that requires arguments can also be decorated, just make sure you pass the arguments to the wrapper function:
+Example
+Functions with arguments can also be decorated:
+"""
+
+def changecase(func):
+  def myinner(x):
+    return func(x).upper()
+  return myinner
+
+@changecase
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))
+
+"""
+*args and **kwargs
+Sometimes the decorator function has no control over the 
+arguments passed from decorated function, to solve this problem,
+ add (*args, **kwargs) to the wrapper function, this way the 
+ wrapper function can accept any number, and any type of 
+ arguments, and pass them to the decorated function.
+
+ Example
+Secure the function with *args and **kwargs arguments:
+"""
+
+def changecase(func):
+  def myinner(*args, **kwargs):
+    return func(*args, **kwargs).upper()
+  return myinner
+
+@changecase
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))
+
+
+
