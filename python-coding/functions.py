@@ -197,3 +197,79 @@ def outer():
 
 outer()
 
+# 5. Lambda Functions (Anonymous Functions)
+
+# Lambda functions are small, anonymous functions defined with the lambda keyword.
+
+# Basic lambda function
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+
+square = lambda x: x ** 2
+print(square(4))  # Output: 16
+
+# lambda in builtin functions
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # Output: [2, 4]
+
+# Sort with lambda key
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+people.sort(key=lambda person: person[1])  # Sort by age
+print(people)  # Output: [('Bob', 25), ('Alice', 30), ('Charlie', 35)] 
+
+# 6. Docstrings (Documentation)
+
+def calculate_bmi(weight, height):
+    """
+    Calculate Body Mass Index (BMI)
+    
+    Args:
+        weight (float): Weight in kilograms
+        height (float): Height in meters
+    
+    Returns:
+        float: BMI value
+    
+    Example:
+        >>> calculate_bmi(70, 1.75)
+        22.86
+    """
+    return weight / (height ** 2)
+
+# Access docstring
+print(calculate_bmi.__doc__)
+help(calculate_bmi)
+print(calculate_bmi(70, 1.75))  # Output: 22.857142857142858
+
+# Higher-Order Functions 
+
+# Functions that take other functions as arguments or return functions.
+
+def apply_operation(x, y, operation):
+    return operation(x, y)
+
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+
+print(apply_operation(5, 3, add))       # Output: 8
+print(apply_operation(5, 3, multiply))  # Output: 15
+
+# Functions that return functions
+
+def make_multiplier(factor):
+    def multiplier(x):
+        return x * factor
+    return multiplier
+
+double = make_multiplier(2)
+triple = make_multiplier(3)
+
+print(double(5))  # Output: 10
+print(triple(5))  # Output: 15
