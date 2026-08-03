@@ -1,0 +1,30 @@
+# Python Encapsulation
+
+# Encapsulation is about protecting data inside a class.
+
+# Private Methods
+# You can also make methods private using the double underscore prefix:
+
+# Example
+# Create a private method:
+
+class Calculator:
+  def __init__(self):
+    self.result = 0
+
+  def __validate(self, num):
+    if not isinstance(num, (int, float)):
+      return False
+    return True
+
+  def add(self, num):
+    if self.__validate(num):
+      self.result += num
+    else:
+      print("Invalid number")
+
+calc = Calculator()
+calc.add(10)
+calc.add(5)
+print(calc.result)
+# calc.__validate(5) # This would cause an error
