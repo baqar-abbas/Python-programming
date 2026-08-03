@@ -21,3 +21,7 @@ p1 = Person("Emil", 30)
 
 # This is how Python mangles the name:
 print(p1._Person__age) # Not recommended!
+
+# Note: While you can access private properties using the mangled 
+# name, it's not recommended. It defeats the purpose of 
+# encapsulation.
