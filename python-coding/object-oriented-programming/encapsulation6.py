@@ -28,3 +28,8 @@ calc.add(10)
 calc.add(5)
 print(calc.result)
 # calc.__validate(5) # This would cause an error
+
+# Note: Just like private properties with double underscores, 
+# private methods cannot be called directly from outside the class.
+#  The __validate method can only be used by other methods inside 
+# the class.
