@@ -32,3 +32,13 @@ arr = np.array([True, False, True])
 
 print(np.sort(arr))
 
+# Sorting a 2-D Array
+# If we use the sort() method on a 2-D array, both arrays will be sorted:
+
+# Example
+# Sort a 2-D array:
+
+arr = np.array([[3, 2, 4], [5, 0, 1]])
+
+print(np.sort(arr))
+
