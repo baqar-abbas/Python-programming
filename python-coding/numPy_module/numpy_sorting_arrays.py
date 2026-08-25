@@ -24,3 +24,11 @@ print(np.sort(arr))
 arr = np.array(['banana', 'cherry', 'apple'])
 
 print(np.sort(arr))
+
+# Example
+# Sort a boolean array:
+
+arr = np.array([True, False, True])
+
+print(np.sort(arr))
+
