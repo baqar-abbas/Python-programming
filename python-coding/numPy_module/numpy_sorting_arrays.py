@@ -13,3 +13,14 @@ import numpy as np
 arr = np.array([3, 2, 0, 1])
 
 print(np.sort(arr))
+
+# Note: This method returns a copy of the array, leaving the original array unchanged.
+
+# We can also sort arrays of strings, or any other data type:
+
+# Example
+# Sort the array alphabetically:
+
+arr = np.array(['banana', 'cherry', 'apple'])
+
+print(np.sort(arr))
