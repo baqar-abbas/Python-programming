@@ -20,3 +20,52 @@ x = [True, False, True, False]
 newarr = arr[x]
 
 print(newarr)
+
+# The example above will return [41, 43], why?
+
+# Because the new array contains only the values where the filter array had the value True, in this case, index 0 and 2.
+
+# Creating the Filter Array
+# In the example above we hard-coded the True and False values, but the common use is to create a filter array based on conditions.
+
+# Example
+# Create a filter array that will return only values higher than 42:
+
+arr = np.array([41, 42, 43, 44])
+
+# Create an empty list
+filter_arr = []
+
+# go through each element in arr
+for element in arr:
+  # if the element is higher than 42, set the value to True, otherwise False:
+  if element > 42:
+    filter_arr.append(True)
+  else:
+    filter_arr.append(False)
+
+newarr = arr[filter_arr]
+
+print(filter_arr)
+print(newarr)
+
+# Example
+# Create a filter array that will return only even elements from the original array:
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+# Create an empty list
+filter_arr = []
+
+# go through each element in arr
+for element in arr:
+  # if the element is completely divisble by 2, set the value to True, otherwise False
+  if element % 2 == 0:
+    filter_arr.append(True)
+  else:
+    filter_arr.append(False)
+
+newarr = arr[filter_arr]
+
+print(filter_arr)
+print(newarr)
