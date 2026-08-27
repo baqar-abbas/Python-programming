@@ -19,3 +19,23 @@ print(x)
 x = random.rand()
 
 print(x)
+
+# Generate Random Array
+# In NumPy we work with arrays, and we can use the two methods from the above examples to make random arrays.
+
+# Integers
+# The randint() method takes a size parameter where we can specify the shape of an array.
+
+# Example
+# Generate a 1-D array containing 5 random integers from 0 to 100:
+
+x=random.randint(100, size=(5))
+
+print(x)
+
+# Example
+# Generate a 2-D array with 3 rows, each row containing 5 random integers from 0 to 100:
+
+x = random.randint(100, size=(3, 5))
+
+print(x)
