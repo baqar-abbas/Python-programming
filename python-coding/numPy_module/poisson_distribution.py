@@ -29,3 +29,22 @@ sns.displot(random.poisson(lam=2, size=1000))
 
 plt.show()
 
+# Difference Between Normal and Poisson Distribution
+# Normal distribution is continuous whereas poisson is discrete.
+
+# But we can see that similar to binomial for a large enough poisson distribution it will become similar to normal distribution with certain std dev and mean.
+
+# Example
+
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+  "normal": random.normal(loc=50, scale=7, size=1000),
+  "poisson": random.poisson(lam=50, size=1000)
+}
+
+sns.displot(data, kind="kde")
+
+plt.show()
