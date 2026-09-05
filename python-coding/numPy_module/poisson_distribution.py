@@ -48,3 +48,23 @@ data = {
 sns.displot(data, kind="kde")
 
 plt.show()
+
+# Difference Between Binomial and Poisson Distribution
+# Binomial distribution only has two possible outcomes, whereas poisson distribution can have unlimited possible outcomes.
+
+# But for very large n and near-zero p binomial distribution is near identical to poisson distribution such that n * p is nearly equal to lam.
+
+# Example
+
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+  "binomial": random.binomial(n=1000, p=0.01, size=1000),
+  "poisson": random.poisson(lam=10, size=1000)
+}
+
+sns.displot(data, kind="kde")
+
+plt.show()
