@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tennis Club</title>
+  </head>
+  <body>
+    <h1>All Members</h1>
+    <p>Welcome to the My Tennis Club!</p>
+    <ul>
+      {% for member in mymembers %}
+      <li>
+        {{ member.firstname }} {{ member.lastname }} - Phone: {{ member.phone }}
+        - Joined: {{ member.joined_date }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
