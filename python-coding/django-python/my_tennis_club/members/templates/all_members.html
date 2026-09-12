@@ -11,8 +11,9 @@
     <ul>
       {% for member in mymembers %}
       <li>
-        {{ member.firstname }} {{ member.lastname }} - Phone: {{ member.phone }}
-        - Joined: {{ member.joined_date }}
+        <a href="{% url 'details' member.id %}">
+          {{ member.firstname }} {{ member.lastname }}
+        </a>
       </li>
       {% endfor %}
     </ul>
