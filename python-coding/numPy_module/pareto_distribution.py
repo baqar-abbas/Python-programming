@@ -15,3 +15,15 @@ from numpy import random
 x = random.pareto(a=2, size=(2, 3))
 
 print(x)
+
+# Visualization of Pareto Distribution
+
+# Example
+
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.displot(random.pareto(a=2, size=1000))
+
+plt.show()
