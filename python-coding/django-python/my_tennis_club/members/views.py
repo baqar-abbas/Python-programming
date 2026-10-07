@@ -1,5 +1,5 @@
 # from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from .models import Member
 
@@ -22,3 +22,10 @@ def details(request, id):
 def main(request):
   template = loader.get_template('main.html')
   return HttpResponse(template.render())
+
+def testing(request):
+  return JsonResponse({
+    'status': 'ok',
+    'service': 'my_tennis_club',
+    'message': 'Service is healthy',
+  })
