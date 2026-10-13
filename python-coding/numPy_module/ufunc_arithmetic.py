@@ -136,3 +136,19 @@ print(newarr)
 # (array([3, 2, 3, 5, 25, 1]), array([1, 6, 3, 0, 0, 27]))
 # The first array represents the quotients, (the integer value when you divide 10 with 3, 20 with 7, 30 with 9 etc.
 # The second array represents the remainders of the same divisions.
+
+# Absolute Values
+# Both the absolute() and the abs() functions do the same absolute operation element-wise but we should use absolute() to avoid confusion with python's inbuilt math.abs()
+
+# Example
+# Return the absolute values of the array:
+
+import numpy as np
+
+arr = np.array([-1, -2, 1, 2, 3, -4])
+
+newarr = np.absolute(arr)
+
+print(newarr)
+
+# The example above will return [1 2 1 2 3 4].
