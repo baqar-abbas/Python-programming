@@ -44,3 +44,17 @@ arr = np.array([np.pi/2, np.pi, 1.5*np.pi, 2*np.pi])
 x = np.rad2deg(arr)
 
 print(x)
+
+# Finding Angles
+# Finding angles from values of sine, cos, tan. E.g. sin, cos and tan inverse (arcsin, arccos, arctan).
+
+# NumPy provides ufuncs arcsin(), arccos() and arctan() that produce radian values for corresponding sin, cos and tan values given.
+
+# Example
+# Find the angle of 1.0:
+
+import numpy as np
+
+x = np.arcsin(1.0)
+
+print(x)
