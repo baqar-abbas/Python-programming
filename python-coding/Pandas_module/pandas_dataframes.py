@@ -57,3 +57,27 @@ print(df.loc[[0, 1]])
 #   1       380        40
 
 # Note: When using [], the result is a Pandas DataFrame.
+
+# Named Indexes
+# With the index argument, you can name your own indexes.
+
+# Example
+# Add a list of names to give each row a name:
+
+import pandas as pd
+
+data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+
+df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
+
+print(df) 
+
+# Result
+
+#         calories  duration
+#   day1       420        50
+#   day2       380        40
+#   day3       390        45
