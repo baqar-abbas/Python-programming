@@ -81,3 +81,18 @@ print(df)
 #   day1       420        50
 #   day2       380        40
 #   day3       390        45
+
+# Locate Named Indexes
+# Use the named index in the loc attribute to return the specified row(s).
+
+# Example
+# Return "day2":
+
+#refer to the named index:
+print(df.loc["day2"])
+
+# Result
+
+#   calories    380
+#   duration     40
+#   Name: day2, dtype: int64
