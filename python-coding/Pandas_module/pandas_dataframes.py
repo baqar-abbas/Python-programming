@@ -24,3 +24,36 @@ print(df)
 #   0       420        50
 #   1       380        40
 #   2       390        45
+
+# Locate Row
+# As you can see from the result above, the DataFrame is like a table with rows and columns.
+
+# Pandas use the loc attribute to return one or more specified row(s)
+
+# Example
+# Return row 0:
+
+#refer to the row index:
+print(df.loc[0])
+
+# Result
+
+#   calories    420
+#   duration     50
+#   Name: 0, dtype: int64
+
+# Note: This example returns a Pandas Series.
+
+# Example
+# Return row 0 and 1:
+
+#use a list of indexes:
+print(df.loc[[0, 1]])
+
+# Result
+
+#      calories  duration
+#   0       420        50
+#   1       380        40
+
+# Note: When using [], the result is a Pandas DataFrame.
